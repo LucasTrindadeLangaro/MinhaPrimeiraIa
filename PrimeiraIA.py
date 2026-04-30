@@ -1,6 +1,10 @@
 from google import genai
 
-client = genai.Client(api_key="AIzaSyCytOooxBb9JZXwQOdA026X9bMAvPJoQSc")
+
+arquivo = open("D:/cursos/MinhaPrimeiraIA/MinhaPrimeiraIa/api.txt","r")
+conteudo = arquivo.read()
+print(conteudo)
+client = genai.Client(api_key=conteudo)
 
 chat = client.chats.create(model="gemini-3-flash-preview")
 pergunta = input("digite sua pergunta: ").upper()
